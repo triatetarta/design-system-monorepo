@@ -7,6 +7,9 @@
 
 /** @type {import("next").NextConfig} */
 const config = {
+  images: {
+    domains: ["lh3.googleusercontent.com"],
+  },
   reactStrictMode: true,
   transpilePackages: ["ui"],
   /* If trying out the experimental appDir, comment the i18n config out
