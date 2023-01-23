@@ -58,6 +58,7 @@ model User {
     accounts      Account[]
     sessions      Session[]
     post          Post[]
+    likes         Like[]
 }
 
 model VerificationToken {
@@ -75,6 +76,20 @@ model Post {
     authorId  String
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    likes     Like[]
 
     @@index([authorId])
+}
+
+model Like {
+    id        String   @id @default(cuid())
+    post      Post     @relation(fields: [postId], references: [id])
+    postId    String
+    user      User     @relation(fields: [userId], references: [id])
+    userId    String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([postId, userId])
+    @@index([userId])
 }

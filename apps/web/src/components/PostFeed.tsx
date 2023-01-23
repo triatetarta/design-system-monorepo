@@ -42,7 +42,7 @@ const PostFeed = ({ where = {} }: PostFeedProps) => {
 
       <CreatePost />
 
-      <div className='overflow-y-scroll'>
+      <div className='overflow-y-scroll px-4'>
         {posts.map((post) => {
           return (
             <Post

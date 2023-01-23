@@ -40,14 +40,14 @@ const CreatePost = () => {
   };
 
   return (
-    <div className='my-4 flex space-x-3 border-b border-b-dark-not-black px-6'>
+    <div className='my-4 flex space-x-3 border-b border-b-dark-not-black px-4'>
       {error && JSON.stringify(error)}
       <form onSubmit={handleSubmit} className='flex w-full flex-col rounded-md'>
         <input
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder='Message'
-          className='bg-quite-light-gray w-full rounded-md py-2 px-4 outline-none'
+          className='w-full rounded-md bg-quite-light-gray py-2 px-4 text-white outline-none'
         />
 
         <div className='mt-4 flex justify-end'>
