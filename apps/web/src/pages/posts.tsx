@@ -14,7 +14,7 @@ const Posts: NextPage = (props) => {
   const { user } = props as PostsProps;
 
   return (
-    <div className='relative flex min-h-screen w-full overflow-hidden'>
+    <div className='relative flex h-screen w-full overflow-hidden'>
       <Sidebar />
       <div className='flex flex-1 items-stretch justify-start'>
         <UserList />
