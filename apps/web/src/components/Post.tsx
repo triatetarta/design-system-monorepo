@@ -1,6 +1,7 @@
 import { InfiniteData, QueryClient } from "@tanstack/react-query";
 import Image from "next/image";
 import { api, RouterInputs, RouterOutputs } from "../utils/api";
+import moment from "moment";
 
 type PostProps = {
   client: QueryClient;
@@ -94,7 +95,7 @@ const Post = ({ client, post, input }: PostProps) => {
   const hasLiked = post.likes.length > 0;
 
   return (
-    <div>
+    <div className='select-none'>
       <div className='flex'>
         {post.author.image ? (
           <Image
@@ -108,13 +109,15 @@ const Post = ({ client, post, input }: PostProps) => {
 
         <div className='ml-2'>
           <div className='flex items-center'>
-            <p className='text-base font-medium text-white'>
+            <p className='text-base font-medium text-white/90'>
               {post.author.name}
             </p>
-            <p className='pl-1 text-xs text-gray-500'>Date</p>
+            <p className='pl-1 text-xs text-white/40'>
+              - {moment(moment(post.createdAt).local().format()).fromNow()}
+            </p>
           </div>
 
-          <div className='text-base font-light text-white/80'>{post.text}</div>
+          <div className='text-base font-light text-white/50'>{post.text}</div>
         </div>
       </div>
 

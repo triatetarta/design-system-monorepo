@@ -35,7 +35,7 @@ const PostFeed = ({ where = {} }: PostFeedProps) => {
   }, [fetchNextPage, hasNextPage, isFetching, scrollPosition]);
 
   return (
-    <div className='relative flex flex-1 flex-col overflow-hidden bg-not-dark-gray'>
+    <div className='relative flex flex-1 select-none flex-col overflow-hidden bg-not-dark-gray'>
       <div className='border-b border-b-dark-not-black py-3 px-4 font-medium text-white shadow-sm'>
         #main
       </div>

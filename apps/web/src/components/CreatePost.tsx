@@ -32,7 +32,9 @@ const CreatePost = () => {
       await postSchema.parse({ text });
       setText("");
     } catch (err) {
-      if (err instanceof z.ZodError) setError(err.message);
+      if (err instanceof z.ZodError) {
+        setError(err.message);
+      }
       return;
     }
 
@@ -40,19 +42,25 @@ const CreatePost = () => {
   };
 
   return (
-    <div className='my-4 flex space-x-3 border-b border-b-dark-not-black px-4'>
-      {error && JSON.stringify(error)}
-      <form onSubmit={handleSubmit} className='flex w-full flex-col rounded-md'>
+    <div className='mt-4 mb-6 flex space-x-3 px-4'>
+      <form
+        onSubmit={handleSubmit}
+        className='flex w-full items-center rounded-md bg-quite-light-gray py-2'
+      >
         <input
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder='Message'
-          className='w-full rounded-md bg-quite-light-gray py-2 px-4 text-white outline-none'
+          className='w-full bg-transparent px-4 text-white outline-none'
         />
 
-        <div className='mt-4 flex justify-end'>
-          <button type='submit' className='rounded-md px-4 py-2 text-white'>
-            Post
+        <div className='flex justify-end'>
+          <button
+            disabled={!text}
+            type='submit'
+            className='rounded-md px-4 text-white/90'
+          >
+            Send
           </button>
         </div>
       </form>
