@@ -58,7 +58,7 @@ const CreatePost = () => {
           <button
             disabled={!text}
             type='submit'
-            className='rounded-md px-4 text-white/90'
+            className='mr-2 rounded-md bg-blue-500 px-4 py-1 text-white/90'
           >
             Send
           </button>

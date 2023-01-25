@@ -1,4 +1,3 @@
-/** @type {import("tailwindcss").Config} */
-module.exports = {
-  presets: [require("tailwind-config/tailwind.config.js")],
-};
+const config = require("tailwind-config/tailwind.config");
+
+module.exports = config;

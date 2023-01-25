@@ -122,7 +122,7 @@ const Post = ({ client, post, input }: PostProps) => {
       </div>
 
       <div className='flex items-center p-2'>
-        <span>{post._count.likes}</span>
+        {/* <span>{post._count.likes}</span> */}
       </div>
     </div>
   );

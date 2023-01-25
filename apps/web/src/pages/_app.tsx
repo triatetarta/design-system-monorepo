@@ -5,7 +5,7 @@ import { api } from "../utils/api";
 
 import "../styles/global.css";
 // include styles from the ui package
-import "ui/styles.css";
+// import "ui/styles.css";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
